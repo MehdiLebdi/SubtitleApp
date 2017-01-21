@@ -45,8 +45,8 @@ AVCaptureSession *_captureSession;
     
     //-- Creata a video device and input from that Device.  Add the input to the capture session.
     AVCaptureDevice * videoDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-//    if(videoDevice == nil)
-//        assert(0);
+    if(videoDevice == nil)
+        assert(0);
     
     //-- Add the device to the session.
     NSError *error;
