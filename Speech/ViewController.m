@@ -30,6 +30,8 @@
 
 @implementation ViewController
 
+NSString *display = @"";
+
 - (void)viewDidLoad {
   [super viewDidLoad];
 
@@ -81,7 +83,13 @@
                                                         finished = YES;
                                                       }
                                                     }
-                                                    _textView.text = [response description];
+                                                    StreamingRecognitionResult *result2 = response.resultsArray[0];
+                                                    NSString *text = result2.alternativesArray[0].transcript;
+                                                    
+                                                    if (![text isEqualToString:@""]) {
+                                                        display = text;
+                                                    }
+                                                    _textView.text = display;
                                                     if (finished) {
                                                       [self stopAudio:nil];
                                                     }
