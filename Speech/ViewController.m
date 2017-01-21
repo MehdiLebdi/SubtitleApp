@@ -25,15 +25,51 @@
 
 @interface ViewController () <AudioControllerDelegate>
 @property (nonatomic, strong) IBOutlet UITextView *textView;
+@property (nonatomic, strong) IBOutlet UIView *cameraPreviewView;
+
 @property (nonatomic, strong) NSMutableData *audioData;
 @end
+
 
 @implementation ViewController
 
 NSString *display = @"";
+AVCaptureVideoPreviewLayer *_previewLayer;
+AVCaptureSession *_captureSession;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+    
+    //-- Setup Capture Session.
+    _captureSession = [[AVCaptureSession alloc] init];
+    
+    //-- Creata a video device and input from that Device.  Add the input to the capture session.
+    AVCaptureDevice * videoDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+//    if(videoDevice == nil)
+//        assert(0);
+    
+    //-- Add the device to the session.
+    NSError *error;
+    AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:videoDevice
+                                                                        error:&error];
+    if(error)
+        assert(0);
+    
+    [_captureSession addInput:input];
+    
+    //-- Configure the preview layer
+    _previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:_captureSession];
+    _previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+    
+    [_previewLayer setFrame:CGRectMake(0, 0,
+                                       self.cameraPreviewView.frame.size.width,
+                                       self.cameraPreviewView.frame.size.height)];
+    
+    //-- Add the layer to the view that should display the camera input
+    [self.cameraPreviewView.layer addSublayer:_previewLayer];
+    
+    //-- Start the camera
+    [_captureSession startRunning];
     
   _textView.textAlignment = NSTextAlignmentCenter;
 
@@ -106,6 +142,8 @@ NSString *display = @"";
     self.audioData = [[NSMutableData alloc] init];
   }
 }
+
+
 
 @end
 
