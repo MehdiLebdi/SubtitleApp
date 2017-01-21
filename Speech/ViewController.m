@@ -36,10 +36,16 @@ NSString *display = @"";
   [super viewDidLoad];
     
   _textView.textAlignment = NSTextAlignmentCenter;
+
+  CGFloat topCorrect = ([_textView bounds].size.height - [_textView contentSize].height);
+  topCorrect = (topCorrect <0.0 ? 0.0 : topCorrect);
+  _textView.contentOffset = (CGPoint){.x = 0, .y = -topCorrect};
+    
+  [self recordAudio];
   [AudioController sharedInstance].delegate = self;
 }
 
-- (IBAction)recordAudio:(id)sender {
+- (void)recordAudio {
   AVAudioSession *audioSession = [AVAudioSession sharedInstance];
   [audioSession setCategory:AVAudioSessionCategoryRecord error:nil];
 

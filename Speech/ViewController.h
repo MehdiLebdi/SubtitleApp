@@ -18,7 +18,7 @@
 
 @interface ViewController : UIViewController
 
-- (IBAction)recordAudio:(id)sender;
+- (void)recordAudio;
 - (IBAction)stopAudio:(id)sender;
 
 @end
