@@ -34,7 +34,8 @@ NSString *display = @"";
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-
+    
+  _textView.textAlignment = NSTextAlignmentCenter;
   [AudioController sharedInstance].delegate = self;
 }
 
@@ -86,13 +87,13 @@ NSString *display = @"";
                                                     StreamingRecognitionResult *result2 = response.resultsArray[0];
                                                     NSString *text = result2.alternativesArray[0].transcript;
                                                     
-                                                    if (![text isEqualToString:@""]) {
+                                                    if (!([text isEqualToString:@""] || response.endpointerType)) {
                                                         display = text;
                                                     }
                                                     _textView.text = display;
-                                                    if (finished) {
-                                                      [self stopAudio:nil];
-                                                    }
+//                                                    if (finished) {
+//                                                      [self stopAudio:nil];
+//                                                    }
                                                   }
                                                 }
      ];
