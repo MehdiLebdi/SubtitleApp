@@ -30,7 +30,7 @@
                                 </accessibility>
                             </view>
                             <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" indicatorStyle="white" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtY-SX-V3c">
-                                <rect key="frame" x="0.0" y="558" width="375" height="108"/>
+                                <rect key="frame" x="0.0" y="526" width="375" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.66093619888045896" green="0.65754678247594378" blue="0.66432561528497414" alpha="0.30056117957746481" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.25366503825911058" green="0.90446891191709844" blue="0.0" alpha="0.43882042253521125" colorSpace="custom" customColorSpace="displayP3"/>
@@ -38,11 +38,23 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JOJ-mY-B5d">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem title="English" image="USA-48" selectedImage="USA-48" id="Edl-vt-0nt"/>
+                                    <tabBarItem title="French" image="France-48" selectedImage="France-48" id="6FX-oc-J56"/>
+                                    <tabBarItem title="Spanish" image="Spain 2-48" selectedImage="Spain 2-48" id="6ox-7D-cVa"/>
+                                    <tabBarItem systemItem="more" id="EGe-A4-ch4"/>
+                                </items>
+                            </tabBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="cameraPreviewView" destination="kA3-SU-J4w" id="PEH-4o-zUT"/>
+                        <outlet property="tabBarDummy" destination="JOJ-mY-B5d" id="NRg-Yy-6Ji"/>
                         <outlet property="textView" destination="vtY-SX-V3c" id="qxO-Ma-9eI"/>
                         <outlet property="view" destination="8bC-Xf-vdC" id="I19-bM-Qp4"/>
                     </connections>
@@ -52,4 +64,9 @@
             <point key="canvasLocation" x="253.59999999999999" y="201.94902548725639"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="France-48" width="48" height="48"/>
+        <image name="Spain 2-48" width="48" height="48"/>
+        <image name="USA-48" width="48" height="48"/>
+    </resources>
 </document>

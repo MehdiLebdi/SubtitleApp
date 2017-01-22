@@ -27,6 +27,9 @@
 @property (nonatomic, strong) IBOutlet UITextView *textView;
 @property (nonatomic, strong) IBOutlet UIView *cameraPreviewView;
 
+@property (weak, nonatomic) IBOutlet UITabBar *tabBarDummy;
+
+
 @property (nonatomic, strong) NSMutableData *audioData;
 @end
 
@@ -39,7 +42,6 @@ AVCaptureSession *_captureSession;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-    
     
     //-- Setup Capture Session.
     _captureSession = [[AVCaptureSession alloc] init];
@@ -134,7 +136,7 @@ AVCaptureSession *_captureSession;
                                                         display = text;
                                                     }
                                                     _textView.text = display;
-                                                      [_textView scrollRangeToVisible:NSMakeRange(_textView.text.length - 1, 1)];
+                                                    [_textView scrollRangeToVisible:NSMakeRange(_textView.text.length - 1, 1)];
                                                     if (finished) {
                                                       [self stopAudio:nil];
                                                       [self recordAudio];
