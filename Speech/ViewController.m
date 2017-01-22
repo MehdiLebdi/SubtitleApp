@@ -134,9 +134,10 @@ AVCaptureSession *_captureSession;
                                                         display = text;
                                                     }
                                                     _textView.text = display;
-//                                                    if (finished) {
-//                                                      [self stopAudio:nil];
-//                                                    }
+                                                    if (finished) {
+                                                      [self stopAudio:nil];
+                                                      [self recordAudio];
+                                                    }
                                                   }
                                                 }
      ];

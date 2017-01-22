@@ -153,7 +153,7 @@
 				TargetAttributes = {
 					D34C17C81C948F5700D69BCA = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 6XQWA26H92;
+						DevelopmentTeam = 8BX48Q3UMW;
 					};
 				};
 			};
@@ -350,7 +350,7 @@
 			baseConfigurationReference = C2D2368DBC8898A52FE6113B /* Pods-Speech.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6XQWA26H92;
+				DEVELOPMENT_TEAM = 8BX48Q3UMW;
 				"HEADER_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -359,7 +359,7 @@
 				);
 				INFOPLIST_FILE = Speech/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.google.speech-pennapps-justin";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.google.speech-pennapps";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -369,10 +369,10 @@
 			baseConfigurationReference = 5E83ACE29B0D0DF0085BA8F2 /* Pods-Speech.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6XQWA26H92;
+				DEVELOPMENT_TEAM = 8BX48Q3UMW;
 				INFOPLIST_FILE = Speech/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.google.speech-pennapps-justin";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.google.speech-pennapps";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
