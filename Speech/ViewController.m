@@ -134,6 +134,7 @@ AVCaptureSession *_captureSession;
                                                         display = text;
                                                     }
                                                     _textView.text = display;
+                                                      [_textView scrollRangeToVisible:NSMakeRange(_textView.text.length - 1, 1)];
                                                     if (finished) {
                                                       [self stopAudio:nil];
                                                       [self recordAudio];
@@ -144,8 +145,6 @@ AVCaptureSession *_captureSession;
     self.audioData = [[NSMutableData alloc] init];
   }
 }
-
-
 
 @end
 
