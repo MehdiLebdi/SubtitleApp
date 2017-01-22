@@ -40,6 +40,7 @@ AVCaptureSession *_captureSession;
 - (void)viewDidLoad {
   [super viewDidLoad];
     
+    
     //-- Setup Capture Session.
     _captureSession = [[AVCaptureSession alloc] init];
     
